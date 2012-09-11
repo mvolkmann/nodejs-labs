@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+  
+  <testsuite name="math.test.js"
+             errors="0"
+             failures="0"
+             tests="4">
+    
+      
+      <testcase name="testSum">
+        
+      </testcase>
+    
+      
+      <testcase name="testSumFile">
+        
+      </testcase>
+    
+      
+      <testcase name="testWithSetUpAndTearDown - testSumWithZero">
+        
+      </testcase>
+    
+      
+      <testcase name="testWithSetUpAndTearDown - testSumWithNegative">
+        
+      </testcase>
+    
+  </testsuite>
+

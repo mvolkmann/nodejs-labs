@@ -1,0 +1,10 @@
+{
+  "name": "Mark Volkmann",
+  "address": {
+    "street": "644 Glen Summit",
+    "city": "St. Charles",
+    "state": "Missouri",
+    "zip": 63304
+  },
+  "hobby": "running"
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf target
+node demo.js
+rm -rf target

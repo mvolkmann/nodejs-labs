@@ -1,0 +1,42 @@
+'use strict';
+/*global complete:false, desc:false, jake: false, task:false */
+var path = require('path');
+
+desc('default task');
+task('default', ['jshint'], function (params) {
+  console.log('running default task');
+});
+
+desc('runs jshint on all .js files');
+task('jshint', function (params) {
+  console.log('running jshint task');
+  jake.exec(['jshint *.js'],
+    /*
+    function () {
+      // TODO: What do you need to do to make this task fail
+      // TODO: if there are jshint violations?
+      complete();
+    },
+    */
+    complete,
+    {stdout: true});
+});
+
+desc('file utilities demo');
+task('file-util-demo', function (params) {
+  jake.mkdirP('copy');
+  // Copy the sibling directory "mocha" into the subdirectory "copy".
+  jake.cpR(path.join(__dirname, '/../mocha'), __dirname + '/copy');
+});
+
+// Create 'package' task that will create the file demo.tgz.
+var t = new jake.PackageTask('demo', 'v0.1', function () {
+  var fileList = ['images/*'];
+  this.packageFiles.include(fileList);
+  this.needTarGz = true; // creates .tgz file
+});
+
+desc('packages the web app');
+task('pkg', ['jshint', 'package'], function (params) {
+  console.log('running pkg task');
+});

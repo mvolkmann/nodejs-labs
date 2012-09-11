@@ -1,0 +1,25 @@
+<!doctype>
+<html>
+  <head>
+    <title>RPN Calculator</title>
+    <link rel="stylesheet" href="rpn.css"/>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="rpn.js"></script>
+  </head>
+  <body>
+    <h1>RPN Calculator</h1>
+    <div>
+      <input id="number" type="text" size="4"/>
+      <button id="enter">Enter</button>
+    </div>
+    <div id="operations">
+      <button id="add">+</button>
+      <button id="subtract">-</button>
+      <button id="multiply">*</button>
+      <button id="divide">/</button>
+    </div>
+    <div>Result: <span id="result"/></div>
+    <div>Stack: <span id="stack"/></div>
+  </body>
+</html>

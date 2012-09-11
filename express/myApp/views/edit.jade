@@ -1,0 +1,34 @@
+h1 Address Book
+
+table
+  tr
+    th.right First Name:
+    td
+      input(id='firstName', type='text', size=20, value='Mark')
+  tr
+    th.right Last Name:
+    td
+      input(id='lastName', type='text', size=20, value='Volkmann')
+  tr
+    th.right Street:
+    td
+      input(id='street', type='text', size=20, value='644 Glen Summit')
+  tr
+    th.right City:
+    td
+      input(id='city', type='text', size=20, value='St. Charles')
+  tr
+    th.right State:
+    td
+      input(id='state', type='text', size=20, value='Missouri')
+  tr
+    th.right Zip:
+    td
+      input(id='zip', type='text', size=5, value='63304')
+
+button(id='save') Save
+button(id='search') Search
+button(id='delete') Delete
+
+script(src='http://code.jquery.com/jquery-1.8.0.min.js')
+script(src='/javascripts/edit.js')

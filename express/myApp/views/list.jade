@@ -1,0 +1,19 @@
+h1 Address Book List View
+
+//- console.log('addressbook =', addressbook);
+
+ul
+each person, key in addressbook
+  div
+    - var id = person.lastName + '|' + person.firstName;
+    input(id='#{id}', type='checkbox')
+    span(class='name')
+      | #{person.lastName}, #{person.firstName}
+    span(class='address')
+      | #{person.street}, #{person.city}, #{person.state}  #{person.zip}
+
+button(id='addBtn') Add
+button(id='deleteBtn') Delete
+button(id='editBtn') Edit
+
+script(src='/javascripts/list.js')

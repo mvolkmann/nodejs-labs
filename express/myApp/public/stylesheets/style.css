@@ -1,0 +1,24 @@
+* {
+  font-family: sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+body {
+  background-color: linen;
+}
+
+.address {
+  font-size: smaller;
+  margin-left: 20px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.right {
+  text-align: right;
+}

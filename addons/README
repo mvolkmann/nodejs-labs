@@ -1,0 +1,19 @@
+To build this
+* create a python-based build script named wscript
+  - specifies source file (obj.source, ending with .cc for C++),
+    name (obj.target) and
+    version (VERSION) of the custom module
+  - copy this one and modify only those three values
+* enter: node-waf configure build
+  - runs WAF, a Python-based build system
+  - looks for wscript in current directory
+  - creates build/Release/hello_1.o
+    * object file that isn't needed at runtime
+  - creates build/Release/hello.node
+    * needed at runtime
+
+To clean
+* rm -rf build
+
+To run
+* node demo

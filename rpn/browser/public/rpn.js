@@ -31,7 +31,7 @@ $(document).ready(function () {
   $('#multiply').click(operation);
   $('#divide').click(operation);
 
-  socket = io.connect('http://localhost:1982');
+  socket = io.connect();
 
   socket.on('connect', function () {
     socket.emit('update');

@@ -2,11 +2,11 @@
 /*global io: false */
 
 function log(msg) {
-  $('#log').prepend('<div class="log">' + msg + '</div>');
+  $('#log').prepend('<div>' + msg + '</div>');
 }
 
 $(document).ready(function () {
-  var socket = io.connect('http://localhost:1982');
+  var socket = io.connect();
   socket.on('message', log);
 
   $('#login').click(function () {

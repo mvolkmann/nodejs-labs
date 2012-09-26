@@ -6,7 +6,7 @@ var strata = require('strata');
 var result;
 
 // Configure Strata middleware.
-strata.use(strata.file, __dirname + '/public', 'index.html');
+strata.use(strata.file, 'public', 'index.html');
 
 // Start Strata server.
 var server = strata.run();

@@ -3,7 +3,7 @@ var sio = require('socket.io');
 var strata = require('strata');
 
 // Configure Strata middleware.
-strata.use(strata.file, __dirname + '/public', 'index.html');
+strata.use(strata.file, 'public', 'index.html');
 
 // Start Strata server.
 var server = strata.run();

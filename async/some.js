@@ -17,8 +17,7 @@ fs.readdir('.', function (err, files) {
       if (err) {
         throw err; // can't pass err to cb
       }
-      var result = stat.mtime > today;
-      cb(result);
+      cb(stat.mtime > today);
     });
   }
 

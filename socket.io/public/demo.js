@@ -10,10 +10,10 @@ $(document).ready(function () {
   socket.on('message', log);
 
   $('#login').click(function () {
-    socket.emit('login', $('#name').val());
+    socket.emit('login', $('#name').val(), log);
   });
 
   $('#send').click(function () {
-    socket.emit('message', $('#message').val());
+    socket.emit('message', $('#message').val(), log);
   });
 });

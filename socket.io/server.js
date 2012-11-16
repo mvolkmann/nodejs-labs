@@ -12,17 +12,17 @@ var server = strata.run();
 var io = sio.listen(server);
 io.set('log level', 1);
 io.sockets.on('connection', function (socket) {
-  socket.on('login', function (name) {
+  socket.on('login', function (name, cb) {
     socket.name = name;
-    socket.emit('message', 'Welcome ' + name + '!');
+    cb('Welcome ' + name + '!');
   });
 
-  socket.on('message', function (msg) {
+  socket.on('message', function (msg, cb) {
     if (socket.name) {
       socket.broadcast.emit('message', socket.name + ': ' + msg);
-      socket.emit('message', 'message received');
+      cb('received "' + msg + '"');
     } else {
-      socket.emit('message', 'must login first');
+      cb('must login first');
     }
   });
 });

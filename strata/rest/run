@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# PUT a key/value pair to add a key or modify an existing key
+echo putting player
+curl -XPUT http://localhost:1982/list/player \
+  -H 'Content-Type: application/json' -d '{"name": "Gretzky", "number": 99}'
+echo putting dog
+curl -XPUT http://localhost:1982/list/dog \
+  -H 'Content-Type: text/plain' -d 'Rudy'
+
+# GET all the key/value pairs
+echo listing all
+curl http://localhost:1982/list
+
+# GET the value of a specific key
+echo; echo listing player
+curl http://localhost:1982/list/player
+echo; echo listing dog
+curl http://localhost:1982/list/dog
+
+# DELETE a specific key
+echo; echo deleting player
+curl -XDELETE http://localhost:1982/list/player
+echo listing player
+curl http://localhost:1982/list/player
+echo; echo listing dog
+curl http://localhost:1982/list
+echo

@@ -68,8 +68,7 @@ if (cluster.isMaster) { // also cluster.isWorker
     }, 1000);
   }).listen(PORT);
 
-  var workerId = process.env.NODE_WORKER_ID; // numbered starting from 1
-  console.log('worker server', workerId, 'ready, pid', process.pid);
+  console.log('worker server pid', process.pid, 'ready');
 
   process.on('message', function (msg) {
     console.log('worker received', msg);

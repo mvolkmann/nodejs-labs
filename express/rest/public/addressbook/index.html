@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="addressbook.css">
+    <script src="lib/jquery-2.0.1.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="addressbook.js"></script>
+  </head>
+  <body>
+    <div class="hero-unit"><h1>Address Book</h1></div>
+
+    <select id="nameList" size="12">
+    </select>
+
+    <div class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="firstName">First Name</label>
+        <div class="controls">
+          <input id="firstName" type="text" size="15"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="lastName">Last Name</label>
+        <div class="controls">
+          <input id="lastName" type="text" size="20"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="email">Email</label>
+        <div class="controls">
+          <input id="email" type="text" size="30"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="phone">Phone</label>
+        <div class="controls">
+          <input id="phone" type="text" size="13"/>
+        </div>
+      </div>
+      <div id="buttons">
+        <button id="add" class="btn"><i class="icon-plus"></i>Add/Update</button>
+        <button id="delete" class="btn"><i class="icon-trash"></i>Delete</button>
+      </div>
+    </div>
+  </body>
+</html>

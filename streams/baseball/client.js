@@ -8,7 +8,8 @@ var tf = new TeamFilter('STL');
 var af = new AverageFilter(100, 0.3);
 bs.pipe(tf).pipe(af);
 
-af.on('data', function (stat) {
+af.on('readable', function () {
+  var stat = af.read();
   console.log(stat.name, stat.team, stat.avg);
 });
 

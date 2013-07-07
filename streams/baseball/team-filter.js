@@ -1,23 +1,18 @@
 'use strict';
-var Stream = require('stream');
+var stream = require('stream');
 var util = require('util');
 
 function TeamFilter(team) {
-  Stream.call(this);
+  stream.Transform.call(this, {objectMode: true});
   this.team = team;
-  this.writable = true; // must do this
 }
-util.inherits(TeamFilter, Stream);
+util.inherits(TeamFilter, stream.Transform);
 
-TeamFilter.prototype.end = function () {
-  this.emit('end');
-};
-
-TeamFilter.prototype.write = function (stat) {
+TeamFilter.prototype._transform = function (stat, encoding, cb) {
   if (stat.team === this.team) {
-    this.emit('data', stat);
+    this.push(stat);
   }
-  return true;
+  cb();
 };
 
 module.exports = TeamFilter;

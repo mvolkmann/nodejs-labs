@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 
-var app = express.createServer();
+var app = express();
 
 // Can have one line like the following to specify
 // each directory to be searched for static files.

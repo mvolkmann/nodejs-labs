@@ -1,25 +1,20 @@
 'use strict';
-var Stream = require('stream');
+var stream = require('stream');
 var util = require('util');
 
 function AverageFilter(minAB, minAvg) {
-  Stream.call(this);
+  stream.Transform.call(this, {objectMode: true});
   this.minAB = minAB;
   this.minAvg = minAvg;
-  this.writable = true; // must do this
 }
-util.inherits(AverageFilter, Stream);
+util.inherits(AverageFilter, stream.Transform);
 
-AverageFilter.prototype.end = function () {
-  this.emit('end');
-};
-
-AverageFilter.prototype.write = function (stat) {
+AverageFilter.prototype._transform = function (stat, encoding, cb) {
   var avg = parseFloat(stat.avg);
   if (stat.ab >= this.minAB && avg >= this.minAvg) {
-    this.emit('data', stat);
+    this.push(stat);
   }
-  return true;
+  cb();
 };
 
 module.exports = AverageFilter;

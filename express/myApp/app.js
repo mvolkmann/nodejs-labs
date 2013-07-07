@@ -1,9 +1,8 @@
 'use strict';
 var express = require('express');
-
 var addressbook = {}; // just storing data in memory
-
-var app = module.exports = express.createServer();
+var app = express();
+module.exports = app;
 
 app.configure(function () {
   app.set('views', __dirname + '/views');

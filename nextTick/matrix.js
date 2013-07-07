@@ -11,7 +11,7 @@ function multiplyHelper(row, column, cb) {
   };
 
   // Don't hog event loop!
-  process.nextTick(function () {
+  setImmediate(function () {
     cb(row.reduce(fn, 0));
   });
 }

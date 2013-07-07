@@ -23,14 +23,10 @@ ws.end();
 // * all the things above MUST be specified
 // * the code is longer and more complicated
 var buf = new Buffer(data);
-var open = fs.open.bind(null, filePath, 'w');
-var write = function (fd, cb) {
+fs.open(filePath, 'w', function (err, fd) {
+  if (err) throw err;
   fs.write(fd, buf, 0, buf.length, 0, function (err) {
-    cb(err, fd);
+    if (err) throw err;
+    fs.close(fd);
   });
-};
-async.waterfall([open, write, fs.close], function (err) {
-  if (err) {
-    throw err;
-  }
 });

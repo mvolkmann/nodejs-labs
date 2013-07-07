@@ -1,4 +1,6 @@
-'use strict'
+'use strict';
+/*global test: false */
+
 var assert = require('chai').assert;
 var fileutil = require('./fileutil');
 

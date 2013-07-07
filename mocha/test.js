@@ -1,4 +1,7 @@
-'use strict'
+'use strict';
+/*global after: false, afterEach: false, before: false,
+  beforeEach: false, suite: false, test: false */
+
 var assert = require('chai').assert;
 
 suite('demo');
@@ -24,13 +27,15 @@ test('first', function () {
   assert.include([1, 2, 3], 2);
   assert.include('text', 'x');
   assert.match('foobar', /^fo\w*ar$/);
-  assert.length([1, 2, 3], 3);
-  assert.length('foo', 3);
-  assert.throws(function () {
+  assert.lengthOf([1, 2, 3], 3);
+  assert.lengthOf('foo', 3);
+  assert.throws(
+    function () {
       JSON.parse('bad json');
     },
     SyntaxError);
-  assert.throws(function () {
+  assert.throws(
+    function () {
       JSON.parse('bad json');
     },
     'Unexpected token');

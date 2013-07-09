@@ -29,13 +29,8 @@ function getStats(dir, cb) {
         return cb(true);
       }
 
-      fs.stat(file, function (statErr, stat) {
-        if (statErr) {
-          err = statErr;
-        } else {
-          stats[file] = stat;
-        }
-
+      fs.stat(file, function (err, stat) {
+        if (!err) stats[file] = stat;
         cb(!err); // stops async.every when there is an error
       });
     };

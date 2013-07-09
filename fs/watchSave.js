@@ -3,8 +3,8 @@ var async = require('async');
 var fs = require('fs');
 
 /*
-fs.watchFile('foo.txt', function (curr, old) {
-  console.log('file change');
+fs.watchFile('foo.txt', function (currStats, oldStats) {
+  console.log('foo.txt changed');
 });
 */
 

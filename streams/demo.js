@@ -1,12 +1,13 @@
 'use strict';
-var liner = require('liner');
+var Liner = require('liner');
+var liner = new Liner('./story.txt');
 
-liner.fromPath('./story.txt', function (err, line) {
-  if (err) {
-    console.error(err);
-  } else if (line === null) {
-    console.log('EOF');
-  } else {
+liner.on('readable', function () {
+  while (true) {
+    var line = liner.read();
+    if (line === null) break;
     console.log(line);
   }
 });
+
+liner.on('error', console.error);

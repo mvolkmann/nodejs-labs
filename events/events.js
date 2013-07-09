@@ -19,11 +19,11 @@ var t = new Thermostat();
 t.on('cold', function (temp) {
   // The event name is not made available to listener functions
   // unless the EventEmitter subclass is written to pass it to listeners.
-  console.log('got', this);
+  //console.log('got', this);
   console.log(temp + ' is too cold!');
 });
 t.on('hot', function (temp) {
-  console.log('got ' + this.type + ' event');
+  //console.log('got ' + this.type + ' event');
   console.log(temp + ' is too hot!');
 });
 

@@ -4,6 +4,11 @@ var dgram = require('dgram');
 var type = 'udp4'; // or 'udp6'
 var client = dgram.createSocket('udp4');
 
+client.on('listening', function () {
+  var addr = client.address();
+  console.log('listening on ' + addr.address + ':' + addr.port);
+});
+
 client.on('message', function (msg, rinfo) {
   console.log('got "' + msg + '" from ' +
     rinfo.address + ':' + rinfo.port);
@@ -12,11 +17,6 @@ client.on('message', function (msg, rinfo) {
 
 client.on('error', function (err) {
   console.error(err);
-});
-
-client.on('listening', function () {
-  var addr = client.address();
-  console.log('listening on ' + addr.address + ':' + addr.port);
 });
 
 var msg = new Buffer('ping');

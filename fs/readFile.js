@@ -1,5 +1,4 @@
 'use strict';
-var async = require('async');
 var fs = require('fs');
 
 var filePath = 'foo.txt';

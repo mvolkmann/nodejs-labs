@@ -9,6 +9,9 @@ var cp = child_process.execFile(file, args, opts, function (err, data) {
     return console.error(err);
   }
 
+  console.log(data);
+
+  /*
   var re = /require\(['"](.*)['"]\)/;
   var requires = {}; // will hold unique modules
   data.split('\n').forEach(function (line) {
@@ -17,7 +20,9 @@ var cp = child_process.execFile(file, args, opts, function (err, data) {
       requires[matches[1]] = true;
     }
   });
+
   Object.keys(requires).sort().forEach(function (req) {
     console.log(req);
   });
+  */
 });

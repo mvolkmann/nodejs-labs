@@ -15,7 +15,8 @@ socket.on('end', function () {
 });
 
 socket.on('error', function (err) {
-  var msg = err.code === 'ECONNREFUSED' ? 'server is not running' : err.toString();
+  var msg = err.code === 'ECONNREFUSED' ?
+    'server is not running' : err.toString();
   console.error(msg);
   process.exit(1);
 });

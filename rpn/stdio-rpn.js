@@ -51,7 +51,8 @@ function evaluate(value, silent) {
   default:
     var v = parseFloat(value);
     if (isNaN(v)) {
-      log('invalid value', silent);
+      result = 'invalid value';
+      log(result, silent);
     } else {
       stack.push(v);
     }

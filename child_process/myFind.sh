@@ -1,10 +1,10 @@
 #!/bin/bash
 # Finds all files with a given file extension in and below the current directory
 # that contain a given string.
-# For example, find3 java "implements Foo"
+# For example, myFind java "implements Foo"
 
 if [ $# -ne 2 ]; then
-  echo usage: find3 {file-extension} {search-string}
+  echo usage: myFind {file-extension} {search-string}
   exit 1
 fi
 

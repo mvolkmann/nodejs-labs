@@ -6,6 +6,7 @@ var urlObj = url.parse(urlString, true, true);
 console.log('urlObj =', urlObj);
 
 urlObj.auth = 'fred:wilma';
+delete urlObj.search;
 urlObj.query.month = 'September';
 urlObj.query.color = 'blue';
 urlObj.hash = '#barney';

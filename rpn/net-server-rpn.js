@@ -1,6 +1,6 @@
 'use strict';
 
-var evaluate = require('./stdio-rpn');
+var evaluate = require('./stdio-rpn').evaluate;
 var net = require('net');
 
 var server = net.createServer(function (socket) {

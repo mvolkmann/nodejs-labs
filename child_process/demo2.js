@@ -1,28 +1,29 @@
 'use strict';
 var child_process = require('child_process');
 
+var file = __dirname + '/myFind.sh';
 var args = ['js', 'require('];
 var opts = {cwd: '..'};
-var file = 'child_process/myFind.sh';
-var cp = child_process.execFile(file, args, opts, function (err, data) {
+// If you get "Error: maxBuffer exceeded, add the option maxBuffer: n
+// where n is bigger than the number of characters returned by myFind.sh.
+opts.maxBuffer = 600 * 1024;
+
+var cp = child_process.execFile(file, args, opts,
+  function (err, stdout, stderr) {
+
   if (err) {
     return console.error(err);
   }
 
-  console.log(data);
-
-  /*
-  var re = /require\(['"](.*)['"]\)/;
+  // The ? after * makes it a non-greedy match so it stops at the first ' or ".
+  var re = /require\(['"](.*?)['"]\)/;
   var requires = {}; // will hold unique modules
-  data.split('\n').forEach(function (line) {
+  stdout.split('\n').forEach(function (line) {
     var matches = re.exec(line);
-    if (matches) {
-      requires[matches[1]] = true;
-    }
+    if (matches) requires[matches[1]] = true;
   });
 
   Object.keys(requires).sort().forEach(function (req) {
     console.log(req);
   });
-  */
 });

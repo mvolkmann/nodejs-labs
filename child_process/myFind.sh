@@ -11,4 +11,5 @@ fi
 # All of these work.
 #find . -name "*.$1" | xargs grep "$2"
 #find . -name "*.$1" -exec grep "$2" {} \;
+# Excluding minimized JavaScript files.
 grep -h -r --include="*.$1" --exclude="*.min.$1" "$2" .

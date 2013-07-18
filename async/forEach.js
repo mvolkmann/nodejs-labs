@@ -21,7 +21,7 @@ function updateMax(filePath, cb) {
 
 var dir = '.';
 fs.readdir(dir, function (err, files) {
-  async.forEachLimit(files, 5, updateMax, function (err) {
+  async.eachLimit(files, 5, updateMax, function (err) {
     if (err) {
       console.error(err);
     } else {

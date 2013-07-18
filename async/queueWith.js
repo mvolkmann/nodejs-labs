@@ -30,7 +30,8 @@ function findLargestFile(dirPath, cb) {
   }
 
   queue = async.queue(worker, 16);
-  queue.drain = function () {
+  queue.drain = function (err) {
+    console.log('drain: err =', err);
     cb(maxPath, maxSize);
   };
   queue.push(dirPath);

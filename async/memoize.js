@@ -6,8 +6,8 @@ var fs = require('fs');
 function atimeMs(filePath, cb) {
   console.log('getting atime for', filePath);
   fs.stat(filePath, function (err, stat) {
-    // Convert stat.atime date string to milliseconds.
-    var result = stat ? Date.parse(stat.atime) : null;
+    // Get milliseconds from stat.atime Date object.
+    var result = stat ? stat.atime.getTime() : null;
     cb(err, result);
   });
 }

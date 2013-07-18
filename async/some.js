@@ -8,15 +8,11 @@ today.setMinutes(0);
 today.setSeconds(0);
 
 fs.readdir('.', function (err, files) {
-  if (err) {
-    return console.error(err);
-  }
+  if (err) return console.error(err);
 
   function modifiedToday(file, cb) {
     fs.stat(file, function (err, stat) {
-      if (err) {
-        throw err; // can't pass err to cb
-      }
+      if (err) throw err; // can't pass err to cb
       cb(stat.mtime > today);
     });
   }

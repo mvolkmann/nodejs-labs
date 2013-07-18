@@ -7,7 +7,6 @@
 
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var rimraf = require('rimraf');
 
 var dirPath = './target/foo/bar';
 mkdirp(dirPath, function (err) {

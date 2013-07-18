@@ -16,3 +16,4 @@ request(url, function (err, res, body) {
 // Copy an image file from a website using streaming.
 url = 'http://ociweb.com/mark/images/waxlogo.png';
 request(url).pipe(fs.createWriteStream('wax.png'));
+console.log('copying image file ... please wait');

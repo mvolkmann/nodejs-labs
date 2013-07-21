@@ -1,5 +1,5 @@
 'use strict';
-/*global io: false */
+/*global io: false, $: false */
 
 function log(msg) {
   $('#log').prepend('<div>' + msg + '</div>');

@@ -4,6 +4,7 @@ var qs = require('querystring');
 
 var PORT = 3002;
 
+// This server accepts any kind of request, GET, POST, ...
 var server = http.createServer(function (req, res) {
   var url = req.url;
 

@@ -23,6 +23,6 @@ echo; echo deleting player
 curl -XDELETE http://localhost:1982/list/player
 echo listing player
 curl http://localhost:1982/list/player
-echo; echo listing dog
+echo; echo listing all
 curl http://localhost:1982/list
 echo

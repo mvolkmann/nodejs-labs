@@ -10,16 +10,27 @@ more complicated than they need to be.
 
     var Liner = require('liner');
     var liner = new Liner('./story.txt');
+
+    // For Node 0.8 and before ...
     liner.on('data', function (line) {
+      // Do something with line.
       console.log(line);
     });
-    liner.on('err', function (err) {
+
+    // For Node 0.10 and after ...
+    liner.on('readable', function () {
+      while (true) {
+        var line = liner.read();
+        if (line === null) break;
+        // Do something with line.
+        console.log(line);
+      }
+    });
+
+    liner.on('error', function (err) {
       console.error(err);
     });
+
     liner.on('end', function () {
       process.exit(0);
     });
-
-To run the example above:
-
-    node example.js

@@ -1,0 +1,15 @@
+{
+  "name": "rpn",
+  "version": "0.0.0",
+  "description": "Node.js class lab exercise",
+  "main": "file-rpn.js",
+  "dependencies": {
+    "liner": "^0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Mark Volkmann",
+  "license": "ISC"
+}

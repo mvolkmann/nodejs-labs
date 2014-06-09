@@ -1,0 +1,15 @@
+{
+  "name": "baseball",
+  "version": "0.0.0",
+  "description": "The data is from http://www.tgfantasybaseball.com/baseball/stats.cfm. It is a tab-delimited file.",
+  "main": "client.js",
+  "dependencies": {
+    "liner": "^0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Mark Volkmann",
+  "license": "ISC"
+}

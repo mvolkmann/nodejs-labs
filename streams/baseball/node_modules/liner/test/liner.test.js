@@ -20,7 +20,11 @@ function testIt(t) {
 
   if (hasStreams2) {
     liner.on('readable', function () {
-      lines.push(liner.read());
+      while (true) {
+        var line = liner.read();
+        if (line === null) break;
+        lines.push(line);
+      }
     });
   } else {
     liner.on('data', function (line) {

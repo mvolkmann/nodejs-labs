@@ -14,8 +14,20 @@ var liner = new Liner(filePath);
 
 var result;
 
-liner.on('data', function (line) {
-  result = rpn.evaluate(line, true);
+liner.on('readable', function () {
+  while (true) {
+    var line = liner.read();
+    if (line === null) break;
+
+    // The 2nd arg to evaluate isn't needed in student solution.
+    // It controls whether logging in my evaluate method is silent.
+    // I found it useful for debugging.
+    result = rpn.evaluate(line, true);
+  }
+});
+
+liner.on('error', function (err) {
+  console.error('err =', err);
 });
 
 liner.on('end', function () {

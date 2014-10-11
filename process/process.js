@@ -10,16 +10,12 @@ console.log('version:', process.version);
 console.log('versions:', process.versions);
 console.log('memory usage:', process.memoryUsage());
 
+// Keep the process alive for 15 seconds.
 setTimeout(
   function () {
     console.log('uptime:', process.uptime());
   },
-  5000);
+  15000);
 
-/*
-process.stdin.resume();
-process.stdin.on('data', function (data) {
-  // Just keeping the process alive.
-});
-*/
-
+// In another window, run "ps -p{pid}" to verify that
+// the change to the process title worked.

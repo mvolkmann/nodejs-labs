@@ -1,5 +1,5 @@
 'use strict';
-var FibStream = require('fibstream');
+var FibStream = require('./fibstream');
 
 var fibs = new FibStream(100);
 //var fibs = new FibStream();

@@ -9,24 +9,17 @@ function readLines(filePath, cb) {
   var rs = fs.createReadStream(filePath, {bufferSize: chunkSize});
   var leftover = '';
 
-  rs.on('readable', function () {
-    while (true) {
-      var buf = rs.read(chunkSize);
-      if (buf === null) break;
-
-      var lines = buf.toString().split(os.EOL);
-      lines[0] = leftover + lines[0];
-      leftover = lines.pop(); // partial line at end
-      lines.forEach(function (line) {
-        cb(line);
-      });
-    }
+  rs.on('data', function (buf) {
+    var lines = buf.toString().split(os.EOL);
+    lines[0] = leftover + lines[0];
+    leftover = lines.pop(); // partial line at end
+    // In the next line, can't just pass cb to forEach
+    // because extra arguments would be passed.
+    lines.forEach(function (line) { cb(line); });
   });
 
   rs.on('end', function () {
-    if (leftover.length > 0) {
-      cb(leftover);
-    }
+    if (leftover.length > 0) cb(leftover);
   });
 }
 

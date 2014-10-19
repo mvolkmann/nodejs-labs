@@ -3,13 +3,12 @@ var BatStream = require('./bat-stream');
 var TeamFilter = require('./team-filter');
 var AverageFilter = require('./average-filter');
 
-var bs = new BatStream();
+var bs = new BatStream('./MLB_batters_2011.txt');
 var tf = new TeamFilter('STL');
 var af = new AverageFilter(100, 0.3);
 bs.pipe(tf).pipe(af);
 
-af.on('readable', function () {
-  var stat = af.read();
+af.on('data', function (stat) {
   console.log(stat.name, stat.team, stat.avg);
 });
 

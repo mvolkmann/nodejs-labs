@@ -3,9 +3,9 @@ var Liner = require('liner');
 var stream = require('stream');
 var util = require('util');
 
-function BatStream() {
+function BatStream(filePath) {
   stream.Transform.call(this, {objectMode: true});
-  new Liner('./MLB_batters_2011.txt').pipe(this);
+  new Liner(filePath).pipe(this);
 }
 util.inherits(BatStream, stream.Transform);
 

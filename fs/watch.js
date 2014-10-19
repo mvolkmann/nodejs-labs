@@ -35,8 +35,8 @@ function getStats(dir, cb) {
       });
     };
 
-    async.every(files, iterator, function (result) {
-      cb(err, stats);
+    async.every(files, iterator, function () {
+      cb(null, stats);
     });
   });
 }

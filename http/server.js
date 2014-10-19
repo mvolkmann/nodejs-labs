@@ -20,6 +20,7 @@ var server = http.createServer(function (req, res) {
   console.log('url =', urlString);
   console.log('headers =', req.headers);
   console.log('HTTP version =', req.httpVersion);
+  console.log('IP =', req.connection.remoteAddress);
 
   /*
   var index = urlString.indexOf('?');

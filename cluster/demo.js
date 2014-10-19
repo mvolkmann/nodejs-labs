@@ -18,8 +18,7 @@ if (cluster.isMaster) { // also cluster.isWorker
   // To trigger this, use "ps -ef" to list processes
   // and "kill {pid}" to kill a worker process.
   cluster.on('exit', function (worker) {
-    // worker.pid is not set if the worker throws an uncaught exception.
-    console.log('worker with pid', worker.pid, 'exited - starting new worker');
+    console.log('worker with pid', worker.process.pid, 'exited - starting new worker');
     worker = cluster.fork();
     worker.on('message', handleMsg);
   });

@@ -55,7 +55,7 @@ var server = http.createServer(function (req, res) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'text/plain');
 
-  // Write the response body after all headers have been written.
+  // Write the response body after all headers have been set.
 
   // Can write response body in one call.
   //res.end('Hello, World!');

@@ -20,6 +20,12 @@ var server = net.createServer(function (socket) {
       socket.write(result.toString());
     }
   });
+
+  /*
+  socket.on('error', function (err) {
+    console.log('server got error event, err =', err);
+  });
+  */
 });
 
 server.listen(1961, function () {

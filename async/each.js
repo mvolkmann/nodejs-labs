@@ -6,7 +6,7 @@ var max = {size: 0};
 
 function getSize(filePath, cb) {
   fs.stat(filePath, function (err, stats) {
-    cb(err, stats ? stats.size : null);
+    cb(err, stats ? stats.size : 0);
   });
 }
 

@@ -1,10 +1,11 @@
 'use strict';
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 var book = {}; // just storing data in memory
 
 app.use(express.static(__dirname + '/public')); // serve static files
-app.use(express.bodyParser()); // automatically convert JSON requests to objects
+app.use(bodyParser()); // automatically convert JSON requests to objects
 
 function del(req, res) {
   var id = req.params.id;

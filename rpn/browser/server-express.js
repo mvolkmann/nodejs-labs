@@ -4,8 +4,8 @@ var http = require('http');
 var rpn = require('../stdio-rpn');
 var sio = require('socket.io');
 
+// Setup Express.
 var app = express();
-
 // Serve static files from the public directory.
 app.use(express.static('public'));
 

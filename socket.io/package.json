@@ -1,0 +1,17 @@
+{
+  "name": "Socket.IO-Demo",
+  "version": "1.0.0",
+  "description": "Socket.IO demo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "R. Mark Volkmann",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.9.8",
+    "socket.io": "^1.1.0",
+    "socket.io-client": "^1.1.0"
+  }
+}

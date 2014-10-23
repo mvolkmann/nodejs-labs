@@ -15,12 +15,8 @@ fs.readFile(filePath, function (err, buf) {
 // Read file in chunks from a stream.
 var rs = fs.createReadStream(filePath);
 //rs.setEncoding('binary');
-rs.on('readable', function () {
-  while (true) {
-    var buf = rs.read();
-    if (buf === null) break;
-    console.log(buf.toString());
-  }
+rs.on('data', function (buf) {
+  console.log(buf.toString());
 });
 
 // This approach has the following advantages:

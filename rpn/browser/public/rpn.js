@@ -1,5 +1,5 @@
 'use strict';
-/*global io: false */
+/*global $: false, io: false */
 
 var numberField;
 var socket;

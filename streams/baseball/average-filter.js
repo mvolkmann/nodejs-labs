@@ -10,8 +10,7 @@ function AverageFilter(minAB, minAvg) {
 util.inherits(AverageFilter, stream.Transform);
 
 AverageFilter.prototype._transform = function (stat, encoding, cb) {
-  var avg = parseFloat(stat.avg);
-  if (stat.ab >= this.minAB && avg >= this.minAvg) {
+  if (stat.ab >= this.minAB && stat.avg >= this.minAvg) {
     this.push(stat);
   }
   cb();

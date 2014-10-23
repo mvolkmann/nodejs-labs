@@ -21,9 +21,7 @@ $(document).ready(function () {
   numberField = $('#number');
   numberField.focus();
   numberField.keypress(function (event) {
-    if (event.which === 13) {
-      enter();
-    }
+    if (event.which === 13) enter();
   });
 
   $('#add').click(operation);

@@ -1,4 +1,5 @@
 'use strict';
+var bodyParser = require('body-parser');
 var express = require('express');
 var addressbook = {}; // just storing data in memory
 var app = express();
@@ -7,7 +8,7 @@ module.exports = app;
 app.configure(function () {
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.bodyParser());
+  app.use(bodyParser.json());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   app.use(express.session({ secret: 'your secret here' }));

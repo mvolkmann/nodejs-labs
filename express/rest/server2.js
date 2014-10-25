@@ -22,10 +22,11 @@ function getCollection(db) {
 }
 
 function setupServer(collection) {
+  var bodyParser = require('body-parser');
   var express = require('express');
   var app = express();
   app.use(express.static(__dirname + '/public')); // serve static files
-  app.use(express.bodyParser()); // convert JSON requests to objects
+  app.use(bodyParser.json()); // convert JSON requests to objects
 
   function getMongoQuery(req) {
     var id = req.params.id;

@@ -17,13 +17,13 @@ function broadcast(socket, topic, data) {
 // Setup Socket.IO.
 var server = http.Server(app);
 var io = sio(server);
-//io.set('log level', 1);
 io.on('connection', function (socket) {
   var result;
 
   socket.on('update', function () {
-    socket.emit('stack', rpn.stack.toString());
-    if (result) socket.emit('result', result.toString());
+    // Emit a 'stack' event to the current client.
+    // If result has a value,
+    // emit a 'result' event to the current client.
   });
 
   socket.on('line', function (line) {
@@ -33,8 +33,9 @@ io.on('connection', function (socket) {
       result = e.message;
     }
 
-    broadcast(socket, 'stack', rpn.stack);
-    if (result) broadcast(socket, 'result', result);
+    // Emit a 'stack' event to all connected clients.
+    // If result has a value,
+    // emit a 'result' event to all connected clients.
   });
 });
 

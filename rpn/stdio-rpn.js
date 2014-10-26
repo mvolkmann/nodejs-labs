@@ -62,7 +62,7 @@ function evaluate(value, silent) {
 }
 
 function evaluateBuffer(buf) {
-  var value = buf.toString().replace(/\s/g, '');
+  var value = buf.toString().trim();
   try {
     evaluate(value);
   } catch (e) {

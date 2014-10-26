@@ -22,7 +22,7 @@ socket.on('error', function (err) {
 });
 
 process.stdin.on('data', function (buf) {
-  var line = buf.toString().replace(/\s/g, '');
+  var line = buf.toString().trim();
   socket.write(line);
 });
 

@@ -11,10 +11,10 @@ process.stdin.on('data', function (data) {
   prompt();
 });
 
+// Press ctrl-d to get this.
 process.stdin.on('end', function () {
   process.stdout.write('\nGoodbye!\n');
-  //console.log('Goodbye!');
+  //console.log('\nGoodbye!'); // same
 });
 
 process.stdin.resume();
-//process.stdin.setEncoding('utf8');

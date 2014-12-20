@@ -8,5 +8,6 @@ var app = express();
 app.use(express.static(__dirname));
 
 var PORT = 1919;
-app.listen(PORT);
-console.log('browse http://localhost:' + PORT + '/google.gif');
+app.listen(PORT, function () {
+  console.log('browse http://localhost:' + PORT + '/google.gif');
+});

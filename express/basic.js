@@ -8,5 +8,6 @@ app.get('/', function (req, res) {
 });
 
 var PORT = 1919;
-app.listen(PORT);
-console.log('browse http://localhost:' + PORT);
+app.listen(PORT, function () {
+  console.log('browse http://localhost:' + PORT);
+});

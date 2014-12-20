@@ -15,7 +15,7 @@ function operation(event) {
   socket.emit('line', op);
 }
 
-$(document).ready(function () {
+$.ready(function () {
   $('#enter').click(enter);
 
   numberField = $('#number');

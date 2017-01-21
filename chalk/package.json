@@ -1,0 +1,14 @@
+{
+  "name": "chalk-demo",
+  "version": "1.0.0",
+  "description": "Demonstrates use of the chalk npm package",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "R. Mark Volkmann <r.mark.volkmann@gmail.com> (http://ociweb.com/mark)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  }
+}

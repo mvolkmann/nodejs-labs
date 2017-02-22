@@ -1,13 +1,17 @@
-'use strict';
-var express = require('express');
+const express = require('express');
+const app = express();
 
-var app = express();
+app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello!');
 });
 
-var PORT = 1919;
-app.listen(PORT, function () {
+app.get('/year', (req, res) => {
+  res.send(new Date().getFullYear().toString());
+});
+
+const PORT = 1919;
+app.listen(PORT, () => {
   console.log('browse http://localhost:' + PORT);
 });

@@ -1,4 +1,4 @@
-async function foo() {
+function foo() {
   return 1;
 }
 
@@ -23,4 +23,6 @@ async function demo() {
   }
 }
 
+console.log('calling demo');
 demo();
+console.log('after demo'); // runs before demo completes
